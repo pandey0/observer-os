@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "composite": true,
+    "types": ["node"]
+  },
+  "references": [
+    { "path": "../../packages/core/tsconfig.json" },
+    { "path": "../../packages/sdk/tsconfig.json" },
+    { "path": "../../packages/plugin-browser/tsconfig.json" },
+    { "path": "../../packages/plugin-cdp/tsconfig.json" },
+    { "path": "../../packages/context-engine/tsconfig.json" },
+    { "path": "../../packages/ai-query/tsconfig.json" }
+  ],
+  "include": ["src/**/*"],
+  "exclude": ["src/__tests__/**/*", "node_modules", "dist"]
+}

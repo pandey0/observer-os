@@ -1,0 +1,57 @@
+{
+  "name": "observer-os-vscode",
+  "private": true,
+  "displayName": "Observer OS",
+  "description": "Runtime intelligence surfaced in your editor",
+  "version": "1.0.0",
+  "publisher": "observer-os",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Debuggers", "Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "observer.copyContext",   "title": "Observer: Copy Runtime Context" },
+      { "command": "observer.listSessions",  "title": "Observer: List Sessions" },
+      { "command": "observer.startSession",  "title": "Observer: Start New Session" },
+      { "command": "observer.openExplorer",  "title": "Observer: Open Explorer" },
+      { "command": "observer.refreshStatus", "title": "Observer: Refresh Status" }
+    ],
+    "configuration": {
+      "title": "Observer OS",
+      "properties": {
+        "observerOs.daemonUrl": {
+          "type": "string",
+          "default": "http://localhost:4000",
+          "description": "Observer OS daemon URL"
+        },
+        "observerOs.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Observer OS API key (leave empty for dev mode)"
+        },
+        "observerOs.pollIntervalMs": {
+          "type": "number",
+          "default": 3000,
+          "description": "How often to poll the daemon for status updates (ms)"
+        },
+        "observerOs.showErrorNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show notifications when FAILED nodes are detected"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

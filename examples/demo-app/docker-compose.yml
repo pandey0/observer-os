@@ -1,0 +1,32 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: observer-demo-postgres
+    ports:
+      - '5433:5432'
+    environment:
+      POSTGRES_DB: observer_demo
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo123
+    volumes:
+      - observer-demo-pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U demo -d observer_demo']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: observer-demo-redis
+    ports:
+      - '6379:6379'
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  observer-demo-pg:

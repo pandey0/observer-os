@@ -1,0 +1,41 @@
+{
+  "name": "@observer-os/plugin-browser",
+  "version": "1.1.0",
+  "description": "Observer OS Browser Plugin — instruments fetch, XHR, console, exceptions, navigation",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./inject": "./dist/browser-inject.js"
+  },
+  "scripts": {
+    "build": "tsc --build && node scripts/build-inject.js",
+    "prepack": "pnpm run build",
+    "build:plugin": "tsc --build",
+    "build:inject": "node scripts/build-inject.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@observer-os/core": "workspace:*",
+    "@observer-os/sdk": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.21.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

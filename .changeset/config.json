@@ -1,0 +1,33 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [],
+  "linked": [
+    [
+      "@observer-os/core",
+      "@observer-os/sdk",
+      "@observer-os/auto-instrument",
+      "@observer-os/daemon",
+      "@observer-os/mcp-server",
+      "@observer-os/cli",
+      "@observer-os/context-engine",
+      "@observer-os/ai-query",
+      "@observer-os/registry",
+      "@observer-os/plugin-browser",
+      "@observer-os/plugin-cdp",
+      "@observer-os/plugin-express",
+      "@observer-os/plugin-postgres",
+      "@observer-os/plugin-redis",
+      "@observer-os/plugin-prisma",
+      "@observer-os/plugin-graphql",
+      "@observer-os/plugin-http",
+      "@observer-os/plugin-react",
+      "@observer-os/plugin-nextjs"
+    ]
+  ],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

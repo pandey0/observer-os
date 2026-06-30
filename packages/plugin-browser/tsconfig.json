@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "composite": true,
+    "types": ["node"]
+  },
+  "references": [
+    { "path": "../core/tsconfig.json" },
+    { "path": "../sdk/tsconfig.json" }
+  ],
+  "include": ["src/**/*"],
+  "exclude": ["src/inject/**/*", "src/__tests__/**/*", "node_modules", "dist", "scripts"]
+}
