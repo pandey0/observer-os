@@ -19,17 +19,17 @@ import { EventQueue } from '../queue';
 import { tryRequire, isAvailable } from '../detect';
 
 describe('patchHttpServer', () => {
-  it('replaces http.createServer with a wrapper', () => {
+  it('patches http.Server.prototype.emit with a wrapper', () => {
     const queue = new EventQueue();
-    const origFn = http.createServer;
+    const origEmit = http.Server.prototype.emit;
 
     patchHttpServer(queue);
 
-    expect(http.createServer).not.toBe(origFn);
-    expect(typeof http.createServer).toBe('function');
+    expect(http.Server.prototype.emit).not.toBe(origEmit);
+    expect(typeof http.Server.prototype.emit).toBe('function');
 
     // Restore for subsequent tests
-    Object.defineProperty(http, 'createServer', { value: origFn, writable: true, configurable: true });
+    http.Server.prototype.emit = origEmit;
   });
 });
 
