@@ -1,6 +1,6 @@
 {
   "name": "@observer-os/daemon",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Observer OS daemon — REST API + WebSocket + Explorer UI",
   "type": "module",
   "main": "./dist/index.js",

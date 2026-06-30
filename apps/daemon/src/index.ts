@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { ObserverDaemon } from './daemon/ObserverDaemon.js';
 import { BrowserObserverPlugin } from '@observer-os/plugin-browser';
 

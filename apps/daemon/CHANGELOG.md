@@ -1,5 +1,11 @@
 # @observer-os/daemon
 
+## 1.1.1
+
+### Patch Changes
+
+- Add missing shebang to daemon bin entry point so `observer-daemon` runs with Node.js instead of being executed as a shell script.
+
 ## 1.1.0
 
 ### Minor Changes
