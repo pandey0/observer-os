@@ -61,6 +61,7 @@ Your App (auto-instrument via --require)
 
 | Doc | What you learn |
 |-----|---------------|
+| [docs/github-workflow.md](./docs/github-workflow.md) | CI pipeline, Changesets release flow, secrets, day-to-day release steps |
 | [docs/architecture/runtime.md](./docs/architecture/runtime.md) | Runtime graph internals: how nodes and edges materialize |
 | [docs/architecture/plugin-system.md](./docs/architecture/plugin-system.md) | How plugins hook into the SDK |
 | [docs/roadmap.md](./docs/roadmap.md) | What's planned |
